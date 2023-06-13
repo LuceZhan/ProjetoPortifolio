@@ -1,0 +1,20 @@
+body{
+    background-image: url(assets/bg-mobile-dark\ \(1080x1920\).jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#container {
+    width: 360px;
+    height: 712px;
+    margin: auto;
+    align-items: center;
+    border: 1px solid black;
+}
+#profile img {
+    width: 100px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+}
