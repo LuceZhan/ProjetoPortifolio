@@ -10,7 +10,7 @@
     --strock-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.2);
     --surface-color-hover: rgba(255, 255, 255, 0.02);
-    --highlight-color: rgba(255, 255, 255, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
     --switch-br-url: url(assets/moon-stars.svg);
 
 }
@@ -21,7 +21,7 @@
     --strock-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
     --surface-color-hover: rgba(0, 0, 0, 0.02);
-    --highlight-color: rgba(0, 0, 0, 0.01);
+    --highlight-color: rgba(0, 0, 0, 0.1);
     --switch-br-url: url(assets/sun.svg);
 }
 
@@ -30,6 +30,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 100vh;
 }
 
 body * {
@@ -38,7 +39,8 @@ body * {
 }
 
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px auto;
     padding: 0 24px;
 }
@@ -76,7 +78,12 @@ body * {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    animation: slide-back 0.4s;
 
+}
+
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -92,8 +99,7 @@ body * {
 
 
 .light #switch button {
-    right: 0;
-    left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 ul {
@@ -150,4 +156,34 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+@media (min-width:700px) {
+    :root {
+        --bg-url: url(/assets/bg-desktop-dark\ \(1920x1080\).jpg);
+    }
+
+    .light {
+        --bg-url: url(/assets/bg-desktop-light\ \(1920x1080\).jpg);
+    }
+}
+
+@keyframes slide-in {
+
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
